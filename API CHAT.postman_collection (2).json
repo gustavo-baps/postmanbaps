@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "37ccbeb8-bb3f-49a3-a1cd-84698e0278e3",
+		"name": "API CHAT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24469053"
+	},
+	"item": [
+		{
+			"name": "usuarios",
+			"item": [
+				{
+					"name": "Entrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nick\":\"Bob\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/Entrar",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Entrar"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Entrar",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nick\":\"Bob\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/Entrar",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"Entrar"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"status\": 200,\r\n    \"resp\": {\r\n        \"token\": \"snoqwins9i2e9832e8923d\",\r\n        \"idUser\": 3\r\n    }\r\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "mensagens",
+			"item": []
+		},
+		{
+			"name": "salas",
+			"item": [
+				{
+					"name": "listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/sala/listar",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sala",
+								"listar"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "listar",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "snoqwins9i2e9832e8923d",
+										"type": "text"
+									},
+									{
+										"key": "nick",
+										"value": "Bob",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/sala/listar",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"sala",
+										"listar"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"msg\": \"ok\",\n    \"resp\": [\n        {\"idSala\": 1, \"sala\": \"vingadores kakakakaka\"},\n        {\"idSala\": 2, \"sala\": \"twitter insano\"},\n        {\"idSala\": 3, \"sala\": \"safoda eles\"},\n        {\"idSala\": 4, \"sala\": \"baps o genio\"},\n        {\"idSala\": 5, \"sala\": \"v de viado\"}\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "entrar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/sala/entrar?idSala=3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sala",
+								"entrar"
+							],
+							"query": [
+								{
+									"key": "idSala",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "entrar",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/sala/entrar?idSala=3",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"sala",
+										"entrar"
+									],
+									"query": [
+										{
+											"key": "idSala",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"status\":200,\r\n    \"msg\": \"ok\",\r\n    \"resp\":{\r\n        \"idSala\":2,\r\n        \"nome\": \"macacobanana\"\r\n    }\r\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
